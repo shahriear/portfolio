@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ================= Premium Brand Palette ==================== */
+/* Light mode (ThemeProvider attribute="class" => default as root) */
+:root {
+  /* Brand */
+  --brand-hex:  #1c125b;   /* deep indigo */
+  --brand2-hex: #4632a8;   /* lighter indigo for gradient */
+
+  /* Surfaces & Text (OKLCH) */
+  --bg:      98% 0.01 254;   /* page background */
+  --surface: 100% 0 0;       /* cards */
+  --text:    13% 0.03 254;   /* primary text */
+  --muted:   48% 0.03 254;   /* secondary text */
+
+  /* convenience */
+  --brand-gradient: linear-gradient(90deg, var(--brand-hex), var(--brand2-hex));
+}
+
+/* Dark mode (ThemeProvider adds .dark on <html>) */
+.dark {
+  --brand-hex:  #ffbe60;   /* warm amber */
+  --brand2-hex: #ff9f2a;   /* deeper amber */
+
+  --bg:      21% 0.03 254;
+  --surface: 24.5% 0.03 254;
+  --text:    97% 0.01 254;
+  --muted:   72% 0.02 254;
+
+  --brand-gradient: linear-gradient(90deg, var(--brand-hex), var(--brand2-hex));
+}
+
+/* ================= Base ==================== */
+html { scroll-behavior: smooth; }
+
+body {
+  @apply bg-[oklch(var(--bg))] text-[oklch(var(--text))];
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter,
+    Arial, "Noto Sans", sans-serif;
+}
+
+.container { @apply max-w-6xl mx-auto px-4; }
+
+/* ================= UI Primitives ==================== */
+.card {
+  @apply rounded-xl border border-black/10 dark:border-white/10
+         bg-white/80 dark:bg-white/5 shadow-soft backdrop-blur;
+}
+
+.btn {
+  @apply inline-flex items-center gap-2 rounded-xl px-4 py-2 font-semibold
+         border border-black/10 dark:border-white/10 text-white;
+  background-image: var(--brand-gradient);
+}
+.btn:hover { filter: brightness(1.05); }
+
+.btn-ghost {
+  @apply inline-flex items-center gap-2 rounded-xl px-4 py-2 font-semibold
+         border border-black/10 dark:border-white/10 bg-transparent;
+  color: oklch(var(--text));
+}
+
+.nav-link { @apply font-semibold px-3 py-2 rounded-lg; color: oklch(var(--muted)); }
+.nav-link:hover { color: oklch(var(--text)); }
+
+.muted { color: oklch(var(--muted)); }
+.soft  { color: color-mix(in oklab, oklch(var(--text)) 70%, transparent); }
+
+/* ================= Themed Bits ==================== */
+.hero-gradient {
+  background:
+    radial-gradient(
+      140px 100px at 70% 30%,
+      color-mix(in oklab, var(--brand-hex) 40%, transparent),
+      transparent 60%
+    ),
+    radial-gradient(
+      220px 160px at 20% 70%,
+      color-mix(in oklab, var(--brand2-hex) 40%, transparent),
+      transparent 60%
+    ),
+    linear-gradient(180deg, oklch(var(--surface)) / 1, oklch(var(--surface)) / 1);
+}
+
+.badge {
+  @apply text-xs font-semibold rounded-full px-2 py-0.5
+         border border-black/10 dark:border-white/10;
+  background: color-mix(in oklab, var(--brand2-hex) 18%, transparent);
+}
+
+.price { @apply text-3xl md:text-4xl font-extrabold; }
+
+.feature { @apply flex items-start gap-2; }
+.feature::before { content: "✓"; @apply text-emerald-400 pt-0.5; }
+
+.skill {
+  @apply w-full h-2 rounded-full bg-black/10 dark:bg-white/10 overflow-hidden;
+}
+.skill > span {
+  @apply block h-full rounded-full;
+  background-image: var(--brand-gradient);
+}
+
+/* ================= Forms ==================== */
+select.form-select {
+  @apply bg-white text-slate-900 dark:bg-slate-800 dark:text-white
+         rounded-xl border border-black/10 dark:border-white/10 p-2;
+}
+.input {
+  @apply w-full rounded-xl border border-black/10 dark:border-white/10
+         bg-transparent px-3 py-2 outline-none;
+}
+
+/* Light/Dark headline colors */
+:root { --headline-1:#1c125b; --headline-2:#1c125b; }
+.dark { --headline-1:#ffbe60; --headline-2:#ffbe60; }
+
+/* Gradient text helper */
+.text-gradient-headline{
+  background-image: linear-gradient(90deg, var(--headline-1), var(--headline-2));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}

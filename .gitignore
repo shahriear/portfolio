@@ -1,0 +1,20 @@
+# Node/Next
+node_modules/
+.next/
+out/
+dist/
+*.log
+.env
+.env.*.local
+.vercel/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+*.zip
+
+# Build artifacts
+*.tar
+*.gz
+*.tgz
