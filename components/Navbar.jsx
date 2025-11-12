@@ -83,19 +83,19 @@ export default function Navbar() {
             {/* no-FOUC:  */}
             <Image
               src="/logoLight.png"
-              alt="Tamim Al Hridoy"
+              alt="Shuvo"
               width={140}
               height={28}
               priority
-              className="h-12 w-auto block dark:hidden"
+              className="h-14 w-auto block dark:hidden"
             />
             <Image
               src="/logoDark.png"
-              alt="Tamim Al Hridoy"
+              alt="Shuvo"
               width={140}
               height={28}
               priority
-              className="h-12 w-auto hidden dark:block"
+              className="h-14 w-auto hidden dark:block"
             />
           </Link>
         </div>
