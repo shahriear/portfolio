@@ -52,8 +52,8 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition ${
         scrolled
-          ? "backdrop-blur bg-white/70 dark:bg-neutral-950/60 border-b border-black/10 dark:border-white/10"
-          : ""
+          ? 'backdrop-blur bg-white/70 dark:bg-neutral-950/60 border-b border-black/10 dark:border-white/10'
+          : ''
       }`}
     >
       {/* One-row responsive grid: [left | center | right] */}
@@ -62,8 +62,8 @@ export default function Navbar() {
         <div className="justify-self-start">
           <button
             className="md:hidden p-2 rounded-lg border border-black/10 dark:border-white/10"
-            onClick={() => setOpen((v) => !v)}
-            aria-label={open ? "Close menu" : "Open menu"}
+            onClick={() => setOpen(v => !v)}
+            aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
             aria-controls="mobile-menu"
           >
@@ -82,32 +82,32 @@ export default function Navbar() {
           >
             {/* no-FOUC:  */}
             <Image
-              src="/tah logo-lite.png"
+              src="/logoLight.png"
               alt="Tamim Al Hridoy"
               width={140}
               height={28}
               priority
-              className="h-6 w-auto block dark:hidden"
+              className="h-12 w-auto block dark:hidden"
             />
             <Image
-              src="/tah logo-drk.png"
+              src="/logoDark.png"
               alt="Tamim Al Hridoy"
               width={140}
               height={28}
               priority
-              className="h-6 w-auto hidden dark:block"
+              className="h-12 w-auto hidden dark:block"
             />
           </Link>
         </div>
         {/* MIDDLE NAV (desktop only, occupies true center column) */}
         <nav className="hidden md:flex items-center justify-center gap-2 col-start-2">
-          {links.map((l) => {
+          {links.map(l => {
             const active = pathname === l.href;
             return (
               <Link
                 key={l.href}
                 href={l.href}
-                className={`nav-link ${active ? "text-foreground font-semibold" : ""}`}
+                className={`nav-link ${active ? 'text-foreground font-semibold' : ''}`}
               >
                 {l.label}
               </Link>
@@ -121,7 +121,7 @@ export default function Navbar() {
             className="hidden md:inline-flex nav-link p-2"
             aria-label="Search"
             aria-expanded={openSearch}
-            onClick={() => setOpenSearch((v) => !v)}
+            onClick={() => setOpenSearch(v => !v)}
           >
             <Search size={16} />
           </button>
@@ -129,7 +129,7 @@ export default function Navbar() {
           {/* Theme toggle */}
           <button
             aria-label="Toggle theme"
-            onClick={() => setTheme(isDark ? "light" : "dark")}
+            onClick={() => setTheme(isDark ? 'light' : 'dark')}
             className="nav-link p-2 rounded-lg border border-black/10 dark:border-white/10"
           >
             {mounted ? (
@@ -161,10 +161,10 @@ export default function Navbar() {
         id="mobile-menu"
         className={`md:hidden fixed inset-x-0 top-16 z-50 bg-white/95 dark:bg-neutral-950/90 border-t border-black/10 dark:border-white/10 shadow-lg transition-transform duration-200 ${
           open
-            ? "translate-y-0 opacity-100"
-            : "-translate-y-2 opacity-0 pointer-events-none"
+            ? 'translate-y-0 opacity-100'
+            : '-translate-y-2 opacity-0 pointer-events-none'
         }`}
-        style={{ height: "100vh", overflowY: "auto" }}
+        style={{ height: '100vh', overflowY: 'auto' }}
       >
         <div className="container py-4 flex flex-col gap-3">
           {/* Mobile search */}
@@ -175,7 +175,7 @@ export default function Navbar() {
             <Search size={18} className="opacity-70" />
             <input
               value={q}
-              onChange={(e) => setQ(e.target.value)}
+              onChange={e => setQ(e.target.value)}
               placeholder="Search..."
               className="bg-transparent flex-1 outline-none px-1 py-2"
             />
@@ -183,7 +183,7 @@ export default function Navbar() {
               className="rounded-lg px-3 py-2 text-white shadow"
               style={{
                 background:
-                  "linear-gradient(90deg, var(--brand-hex), var(--brand2-hex))",
+                  'linear-gradient(90deg, var(--brand-hex), var(--brand2-hex))',
               }}
             >
               Go
@@ -192,12 +192,12 @@ export default function Navbar() {
 
           {/* Links */}
           <nav className="flex flex-col gap-1">
-            {links.map((l) => (
+            {links.map(l => (
               <Link
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className={`nav-link ${pathname === l.href ? "font-semibold" : ""}`}
+                className={`nav-link ${pathname === l.href ? 'font-semibold' : ''}`}
               >
                 {l.label}
               </Link>
@@ -210,7 +210,7 @@ export default function Navbar() {
               aria-label="Toggle theme"
               onClick={() => {
                 setOpen(false);
-                setTheme(isDark ? "light" : "dark");
+                setTheme(isDark ? 'light' : 'dark');
               }}
               className="nav-link p-2 rounded-lg border border-black/10 dark:border-white/10"
             >
