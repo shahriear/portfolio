@@ -16,7 +16,7 @@ export default function Footer() {
         className="pointer-events-none absolute inset-x-0 -top-px h-px opacity-70"
         style={{
           background:
-            "linear-gradient(90deg, var(--brand-hex), transparent 20%, transparent 80%, var(--brand2-hex))",
+            'linear-gradient(90deg, var(--brand-hex), transparent 20%, transparent 80%, var(--brand2-hex))',
         }}
       />
       <div className="container py-8 md:py-10">
@@ -51,7 +51,7 @@ export default function Footer() {
 
             <Link
               aria-label="GitHub"
-              href="https://github.com/tamimalhridoy"
+              href="https://github.com/shahriear"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-lg p-2 hover:bg-black/5 dark:hover:bg-white/10 transition"
@@ -81,7 +81,7 @@ export default function Footer() {
             {/* back to top */}
             <button
               aria-label="Back to top"
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               className="ml-2 rounded-lg p-2 hover:bg-black/5 dark:hover:bg-white/10 transition"
             >
               <ArrowUp className="h-5 w-5 opacity-80" />
