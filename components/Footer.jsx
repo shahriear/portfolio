@@ -35,7 +35,7 @@ export default function Footer() {
               Solutions
             </Link>
             <Link className="nav-link" href="/contact">
-              Contact
+              Contactttt
             </Link>
           </nav>
 
