@@ -4,7 +4,7 @@
 import Link from "next/link";
 import { Mail, Github, Linkedin, ArrowUp, MessageCircle } from "lucide-react";
 
-const BRAND = "Tamim Al Hridoy";
+const BRAND = "Shahriear Shuvo";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -35,7 +35,7 @@ export default function Footer() {
               Solutions
             </Link>
             <Link className="nav-link" href="/contact">
-              Contactttt
+              Contact
             </Link>
           </nav>
 
@@ -43,7 +43,7 @@ export default function Footer() {
           <div className="flex items-center gap-4">
             <Link
               aria-label="Email"
-              href="mailto:contact@tamimalhridoy.com"
+              href="mailto:shuvovai403@gmail.com"
               className="rounded-lg p-2 hover:bg-black/5 dark:hover:bg-white/10 transition"
             >
               <Mail className="h-5 w-5 opacity-80" />
@@ -61,7 +61,7 @@ export default function Footer() {
 
             <Link
               aria-label="LinkedIn"
-              href="https://www.linkedin.com/in/tamimalhridoy7/"
+              href="http://linkedin.com/in/shahriear-shuvo"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-lg p-2 hover:bg-black/5 dark:hover:bg-white/10 transition"
@@ -70,7 +70,7 @@ export default function Footer() {
             </Link>
             <Link
               aria-label="WhatsApp"
-              href="https://wa.me/+8801912218666"
+              href="https://wa.me/+8801706691320"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-lg p-2 hover:bg-black/5 dark:hover:bg-white/10 transition"
