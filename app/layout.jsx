@@ -18,7 +18,7 @@ export const metadata = {
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://tamimalhridoy.com"
   ),
   title: {
-    default: "Tamim Al Hridoy — Full-Stack Developer",
+    default: "Shuvo — Full-Stack Developer",
     template: "%s | Tamim Al Hridoy",
   },
   description:

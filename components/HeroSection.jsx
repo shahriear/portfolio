@@ -19,27 +19,29 @@ const itemUp = {
 
 export default function HeroSection({
   roles = [
-    "Full-Stack Developer",
-    "Digital Marketer",
-    "Graphic Designer",
-    "Motion/Video Editor",
+    'Full-Stack Developer',
+    'Role-Based Access Control (RBAC)',
+    'Responsive Web Design',
   ],
   title = (
     <>
-      I build modern,{" "}
-      <span className="text-gradient-headline">high-quality web,</span>{" "}
-      marketing & apparel experiences.
+      I build modern,{' '}
+      <span className="text-gradient-headline">high-quality, scalable web</span>{' '}
+      applications.
     </>
   ),
   subtitle = (
     <>
-      Full-stack builds in React, Next.js &amp; Node.js plus branding, digital
+      {/* Full-stack builds in React, Next.js &amp; Node.js plus branding, digital
       marketing, and short-form motion editing. I also run a made-to-order
-      garments unit.
+      garments unit. */}
+      “Full-stack engineer building scalable applications with React, Next.js,
+      Node.js, Express, MongoDB, Tailwind CSS, Redux Toolkit, REST APIs, secure
+      JWT authentication, and cloud deployments on Vercel.”
     </>
   ),
-  imageSrc = "/images/shuvo.jpg",
-  imageAlt = "shuvo",
+  imageSrc = '/images/shuvo.jpg',
+  imageAlt = 'shuvo',
 }) {
   return (
     <section className="mt-24 grid items-center gap-10 md:grid-cols-2">
@@ -71,7 +73,7 @@ export default function HeroSection({
         </motion.div>
 
         <motion.div variants={itemUp} className="mt-6 flex flex-wrap gap-2">
-          {roles.map((r) => (
+          {roles.map(r => (
             <span key={r} className="badge">
               {r}
             </span>
@@ -83,7 +85,7 @@ export default function HeroSection({
       <motion.div
         initial={{ opacity: 0, scale: 0.96, y: 8 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
         className="relative"
       >
         <div className="card h-80 overflow-hidden p-0 md:h-[26rem] w-fit">
