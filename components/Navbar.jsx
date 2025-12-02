@@ -87,7 +87,7 @@ export default function Navbar() {
               width={140}
               height={28}
               priority
-              className="h-14 w-auto block dark:hidden"
+              className="h-10 w-auto block dark:hidden"
             />
             <Image
               src="/logoDark.png"
@@ -95,7 +95,7 @@ export default function Navbar() {
               width={140}
               height={28}
               priority
-              className="h-14 w-auto hidden dark:block"
+              className="h-10 w-auto hidden dark:block"
             />
           </Link>
         </div>

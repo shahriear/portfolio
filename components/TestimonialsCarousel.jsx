@@ -11,7 +11,7 @@ const GRADIENT =
 const TESTIMONIALS = [
   {
     quote:
-      "Tamim Al Hridoy rebuilt our site in Next.js with image optimization and edge caching—LCP now ~1.0s and key pages climbed in Google. 100% recommended.",
+      "Shahriear Shuvo rebuilt our site in Next.js with image optimization and edge caching—LCP now ~1.0s and key pages climbed in Google. 100% recommended.",
     name: "Ethan Walker",
     role: "Head of Growth, B2B SaaS",
   },
@@ -29,7 +29,7 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      "Clean brand identity, guidelines, and a web style system that scales. Every asset looks consistent now. We recommend Tamim 100%.",
+      "Clean brand identity, guidelines, and a web style system that scales. Every asset looks consistent now. We recommend Shuvo 100%.",
     name: "Elena Petrova",
     role: "Creative Director, Consumer Apps",
   },
@@ -41,7 +41,7 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      "CRO suggestions + new landing pages lifted conversion 24% on the same ad spend. Tamim’s data-driven approach is the real deal.",
+      "CRO suggestions + new landing pages lifted conversion 24% on the same ad spend. Shuvo data-driven approach is the real deal.",
     name: "Sophie Grant",
     role: "Growth Lead, DTC Beauty",
   },
@@ -65,7 +65,7 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      "Tamim’s content architecture and on-page SEO fixed cannibalization. We gained featured snippets on three money keywords. 100% recommend.",
+      "Shuvo content architecture and on-page SEO fixed cannibalization. We gained featured snippets on three money keywords. 100% recommend.",
     name: "Chloe Dubois",
     role: "SEO Lead, Cybersecurity",
   },
@@ -89,7 +89,7 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      "International SEO with hreflang done right—EU traffic up and bounce rate down. Tamim knows the details that matter.",
+      "International SEO with hreflang done right—EU traffic up and bounce rate down. Shuvo knows the details that matter.",
     name: "Marta Nowak",
     role: "Marketing Manager, EdTech",
   },
@@ -101,7 +101,7 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      "From brief to brand kit in ten days. The guidelines keep our ads, web, and socials aligned. 100% recommend Tamim.",
+      "From brief to brand kit in ten days. The guidelines keep our ads, web, and socials aligned. 100% recommend Shuvo.",
     name: "Sara Lund",
     role: "Brand Manager, Consultancy",
   },
@@ -113,7 +113,7 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      "CRO + copy refresh lifted demo requests 26%. Tamim ties analytics, SEO, and messaging together beautifully.",
+      "CRO + copy refresh lifted demo requests 26%. Shuvo ties analytics, SEO, and messaging together beautifully.",
     name: "Noah Klein",
     role: "Head of Product Marketing, HR Tech",
   },
@@ -131,7 +131,7 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      "Tamim’s performance budgets and code reviews kept the site under a second. Our ads perform better now, too.",
+      "Shuvo’s performance budgets and code reviews kept the site under a second. Our ads perform better now, too.",
     name: "André Costa",
     role: "Performance Lead, Gaming Studio",
   },
@@ -161,7 +161,7 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      "Accessibility and compliance were first-class; auditors had zero notes. Tamim’s thoroughness shows.",
+      "Accessibility and compliance were first-class; auditors had zero notes. Shuvo’s thoroughness shows.",
     name: "David Stein",
     role: "Compliance Lead, SaaS",
   },
@@ -173,7 +173,7 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      "Server-side events + GA4 fixed our funnel tracking. CAC reporting is finally accurate. 10/10 recommend Tamim.",
+      "Server-side events + GA4 fixed our funnel tracking. CAC reporting is finally accurate. 10/10 recommend Shuvo.",
     name: "Carter Reed",
     role: "CEO, B2B Marketplace",
   },
@@ -193,13 +193,13 @@ const TESTIMONIALS = [
   // ---------- Asia (10) ----------
   {
     quote:
-      "Next.js storefront with local gateways and tax rules—checkout success up 23%. Tamim is our go-to. 100% recommended.",
+      "Next.js storefront with local gateways and tax rules—checkout success up 23%. Shuvo is our go-to. 100% recommended.",
     name: "Rohan Mehta",
     role: "Head of E-commerce, Retail",
   },
   {
     quote:
-      "Server-side tagging plus GA4 made reporting precise. Decisions are finally data-driven. Strongly recommend Tamim.",
+      "Server-side tagging plus GA4 made reporting precise. Decisions are finally data-driven. Strongly recommend Shuvo.",
     name: "Chen Wei",
     role: "Growth Lead, B2B SaaS",
   },
@@ -217,7 +217,7 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      "Tamim designed a crisp monogram and wordmark that scale on packaging and web. Professional and patient—highly recommended.",
+      "Shuvo designed a crisp monogram and wordmark that scale on packaging and web. Professional and patient—highly recommended.",
     name: "Siti Rahma",
     role: "Founder, Beauty D2C",
   },
@@ -235,19 +235,19 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      "Landing pages + creatives hit CPA targets within a week. Tamim blends performance marketing with solid UX. 100% recommended.",
+      "Landing pages + creatives hit CPA targets within a week. Shuvo blends performance marketing with solid UX. 100% recommended.",
     name: "Haruka Sato",
     role: "Performance Marketer, Travel",
   },
   {
     quote:
-      "Domain migration and Cloudflare were seamless—zero downtime and a noticeable speed bump. Strongly recommend Tamim.",
+      "Domain migration and Cloudflare were seamless—zero downtime and a noticeable speed bump. Strongly recommend Shuvo.",
     name: "Ali Raza",
     role: "IT Administrator, Healthcare",
   },
   {
     quote:
-      "Brand positioning clarified our message; the sales deck finally resonates. We recommend Tamim Al Hridoy without hesitation.",
+      "Brand positioning clarified our message; the sales deck finally resonates. We recommend Shahriear Shuvo without hesitation.",
     name: "Xiao Lin",
     role: "Sales Director, Enterprise Software",
   },

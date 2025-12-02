@@ -137,7 +137,7 @@ export default function BundlesSection({
                     ))}
                   </ul>
 
-                  <Link href={href} className="mt-5 inline-flex w-full items-center justify-center rounded-xl border border-black/10 dark:border-white/10 px-4 py-2.5 text-sm font-medium">
+                  <Link href={href} className="mt-5 inline-flex w-full items-center justify-center rounded-xl border border-black/10 hover:bg-blue-100 dark:hover:bg-slate-700 dark:border-white/10 px-4 py-2.5 text-sm font-medium">
                     Contact about “{b.queryLabel}”
                   </Link>
                 </div>
