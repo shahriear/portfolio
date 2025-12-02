@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
-import Link from "next/link";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { useEffect, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
+import Link from 'next/link';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
 import {
   Mail,
   Calendar,
@@ -15,31 +15,31 @@ import {
   Twitter,
   MessageCircle,
   Copy,
-} from "lucide-react";
-import { useToast } from "@/components/ui/Toast";
+} from 'lucide-react';
+import { useToast } from '@/components/ui/Toast';
 
 /* ---------- Schemas (server-match) ---------- */
 const inquirySchema = z.object({
-  name: z.string().min(2, "Name is required (min 2 chars)"),
-  email: z.string().email("Valid email required"),
-  reason: z.string().optional().or(z.literal("")),
-  message: z.string().min(10, "Message must be at least 10 characters"),
-  hp: z.string().max(0).optional().or(z.literal("")),
+  name: z.string().min(2, 'Name is required (min 2 chars)'),
+  email: z.string().email('Valid email required'),
+  reason: z.string().optional().or(z.literal('')),
+  message: z.string().min(10, 'Message must be at least 10 characters'),
+  hp: z.string().max(0).optional().or(z.literal('')),
 });
 
 const bookingSchema = z.object({
-  name: z.string().min(2, "Name is required (min 2 chars)"),
-  email: z.string().email("Valid email required"),
-  datetime: z.string().min(1, "Pick a date & time"),
-  notes: z.string().optional().or(z.literal("")),
-  hp: z.string().max(0).optional().or(z.literal("")),
+  name: z.string().min(2, 'Name is required (min 2 chars)'),
+  email: z.string().email('Valid email required'),
+  datetime: z.string().min(1, 'Pick a date & time'),
+  notes: z.string().optional().or(z.literal('')),
+  hp: z.string().max(0).optional().or(z.literal('')),
 });
 
 /* ---------- Helpers ---------- */
 async function submitToApi(endpoint, payload) {
-  const res = await fetch(endpoint || "/api/contact", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
+  const res = await fetch(endpoint || '/api/contact', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload),
   });
 
@@ -49,7 +49,7 @@ async function submitToApi(endpoint, payload) {
   } catch {}
 
   if (!res.ok || out?.ok === false) {
-    throw new Error(out?.error || "Submission failed");
+    throw new Error(out?.error || 'Submission failed');
   }
   return out;
 }
@@ -58,22 +58,21 @@ export default function ContactClient() {
   const params = useSearchParams();
   const { push } = useToast();
 
-  const endpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || "/api/contact";
-  const toEmail =
-    process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contact@tamimalhridoy.com";
+  const endpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || '/api/contact';
+  const toEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'shahriearshuvo.com';
 
-  const initialTab = params.get("tab") === "book" ? "book" : "inquiry";
+  const initialTab = params.get('tab') === 'book' ? 'book' : 'inquiry';
   const [tab, setTab] = useState(initialTab);
-  const reasonFromURL = params.get("reason") || "";
+  const reasonFromURL = params.get('reason') || '';
 
   useEffect(() => {
-    const t = params.get("tab");
-    if (t === "book" || t === "inquiry") setTab(t);
+    const t = params.get('tab');
+    if (t === 'book' || t === 'inquiry') setTab(t);
   }, [params]);
 
   const tabs = [
-    { key: "inquiry", label: "General inquiry" },
-    { key: "book", label: "Book a call" },
+    { key: 'inquiry', label: 'General inquiry' },
+    { key: 'book', label: 'Book a call' },
   ];
 
   return (
@@ -88,7 +87,7 @@ export default function ContactClient() {
 
           {/* Tabs */}
           <div className="mt-4 flex flex-wrap gap-2">
-            {tabs.map((t) => {
+            {tabs.map(t => {
               const isActive = tab === t.key;
               return (
                 <button
@@ -96,15 +95,15 @@ export default function ContactClient() {
                   onClick={() => setTab(t.key)}
                   className={`rounded-full px-4 py-2 transition border ${
                     isActive
-                      ? "text-white shadow"
-                      : "bg-transparent border-black/10 dark:border-white/15"
+                      ? 'text-white shadow'
+                      : 'bg-transparent border-black/10 dark:border-white/15'
                   }`}
                   style={
                     isActive
                       ? {
                           background:
-                            "linear-gradient(90deg, var(--brand-hex), var(--brand2-hex))",
-                          borderColor: "transparent",
+                            'linear-gradient(90deg, var(--brand-hex), var(--brand2-hex))',
+                          borderColor: 'transparent',
                         }
                       : undefined
                   }
@@ -117,7 +116,7 @@ export default function ContactClient() {
 
           {/* Active form */}
           <div className="mt-6">
-            {tab === "book" ? (
+            {tab === 'book' ? (
               <BookingForm endpoint={endpoint} toEmail={toEmail} push={push} />
             ) : (
               <InquiryForm
@@ -161,10 +160,10 @@ export default function ContactClient() {
             </li>
             <li className="feature">
               <Link
-                href="/garments"
+                href="/resume"
                 className="btn-ghost inline-flex items-center gap-2"
               >
-                Garments
+                Resume
               </Link>
             </li>
           </ul>
@@ -174,7 +173,7 @@ export default function ContactClient() {
           <h4 className="text-sm font-semibold">Connect</h4>
           <div className="mt-3 flex flex-wrap gap-2">
             <Link
-              href="https://www.linkedin.com/in/tamimalhridoy7/"
+              href="https://www.linkedin.com/in/shahriear-shuvo/?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -183,7 +182,7 @@ export default function ContactClient() {
               <Linkedin size={18} />
             </Link>
             <Link
-              href="https://wa.me/+8801912218666"
+              href="https://wa.me/+8801706691320"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"
@@ -203,7 +202,7 @@ export default function ContactClient() {
             <button
               onClick={() => {
                 navigator.clipboard.writeText(toEmail);
-                push({ title: "Email copied", desc: toEmail });
+                push({ title: 'Email copied', desc: toEmail });
               }}
               className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-black/10 dark:border-white/15 hover:shadow transition"
               aria-label="Copy email"
@@ -213,7 +212,7 @@ export default function ContactClient() {
             </button>
 
             <Link
-              href="https://www.facebook.com/tamimalhridoy/"
+              href="https://www.facebook.com/share/1GFQsbVYJZ/?mibextid=wwXIfr"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
@@ -222,7 +221,7 @@ export default function ContactClient() {
               <Facebook size={18} />
             </Link>
             <Link
-              href="https://www.instagram.com/tamimalhridoy/"
+              href="https://www.instagram.com/shuv0o._?igsh=MzZoZDNqazRmazl0"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
@@ -231,7 +230,7 @@ export default function ContactClient() {
               <Instagram size={18} />
             </Link>
             <Link
-              href="https://twitter.com/tamimalhridoy"
+              href=""
               target="_blank"
               rel="noopener noreferrer"
               aria-label="X"
@@ -261,18 +260,18 @@ function InquiryForm({ endpoint, toEmail, reasonFromURL, push }) {
   } = useForm({ resolver: zodResolver(inquirySchema) });
 
   useEffect(() => {
-    if (reasonFromURL) setValue("reason", reasonFromURL);
+    if (reasonFromURL) setValue('reason', reasonFromURL);
   }, [reasonFromURL, setValue]);
 
-  const onSubmit = async (d) => {
+  const onSubmit = async d => {
     try {
       if (endpoint) {
-        await submitToApi(endpoint, { type: "inquiry", ...d });
-        push({ title: "Thanks! I will get back soon.", variant: "success" });
+        await submitToApi(endpoint, { type: 'inquiry', ...d });
+        push({ title: 'Thanks! I will get back soon.', variant: 'success' });
         reset();
       } else {
         const subject = encodeURIComponent(
-          `Contact — ${d.reason || "General"}`
+          `Contact — ${d.reason || 'General'}`
         );
         const body = encodeURIComponent(
           `${d.message}\n\n— ${d.name} • ${d.email}`
@@ -282,8 +281,8 @@ function InquiryForm({ endpoint, toEmail, reasonFromURL, push }) {
     } catch (e) {
       push({
         title: "Couldn't send your message",
-        desc: e.message || "Please try again.",
-        variant: "error",
+        desc: e.message || 'Please try again.',
+        variant: 'error',
       });
     }
   };
@@ -296,15 +295,16 @@ function InquiryForm({ endpoint, toEmail, reasonFromURL, push }) {
         className="hidden"
         tabIndex={-1}
         autoComplete="off"
-        {...register("hp")}
+        {...register('hp')}
       />
 
       <div className="grid gap-3 md:grid-cols-2">
         <label className="grid gap-1">
           <span>Name</span>
           <input
+            placeholder="Enter your Name"
             className="rounded-xl border border-black/10 dark:border-white/10 bg-white dark:bg-slate-900 text-slate-900 dark:text-white px-3 py-2 outline-none focus:ring-2 focus:ring-[var(--brand2-hex)]"
-            {...register("name")}
+            {...register('name')}
           />
           {errors.name && (
             <span className="text-red-500 text-sm">{errors.name.message}</span>
@@ -314,8 +314,9 @@ function InquiryForm({ endpoint, toEmail, reasonFromURL, push }) {
         <label className="grid gap-1">
           <span>Email</span>
           <input
+            placeholder="Enter your email"
             className="rounded-xl border border-black/10 dark:border-white/10 bg-white dark:bg-slate-900 text-slate-900 dark:text-white px-3 py-2 outline-none focus:ring-2 focus:ring-[var(--brand2-hex)]"
-            {...register("email")}
+            {...register('email')}
             type="email"
           />
           {errors.email && (
@@ -328,8 +329,8 @@ function InquiryForm({ endpoint, toEmail, reasonFromURL, push }) {
         <span>Reason (optional)</span>
         <input
           className="rounded-xl border border-black/10 dark:border-white/10 bg-white dark:bg-slate-900 text-slate-900 dark:text-white px-3 py-2 outline-none focus:ring-2 focus:ring-[var(--brand2-hex)]"
-          {...register("reason")}
-          placeholder="Website / Hosting / Garments / Other"
+          {...register('reason')}
+          placeholder="Website / Hosting / Other"
         />
       </label>
 
@@ -337,8 +338,9 @@ function InquiryForm({ endpoint, toEmail, reasonFromURL, push }) {
         <span>Message</span>
         <textarea
           rows={6}
+          placeholder="Send message to shuvo....."
           className="rounded-xl border border-black/10 dark:border-white/10 bg-white dark:bg-slate-900 text-slate-900 dark:text-white px-3 py-2 outline-none focus:ring-2 focus:ring-[var(--brand2-hex)]"
-          {...register("message")}
+          {...register('message')}
         />
         {errors.message && (
           <span className="text-red-500 text-sm">{errors.message.message}</span>
@@ -346,12 +348,15 @@ function InquiryForm({ endpoint, toEmail, reasonFromURL, push }) {
       </label>
 
       <button className="btn w-fit" type="submit" disabled={isSubmitting}>
-        <Mail size={18} /> {isSubmitting ? "Sending..." : "Send message"}
+        <Mail size={18} /> {isSubmitting ? 'Sending...' : 'Send message'}
       </button>
 
-      <p className="muted text-sm">
-        Direct:{" "}
-        <Link className="underline" href={`mailto:${toEmail}`}>
+      <p className="muted text-sm text-white">
+        Direct:{' '}
+        <Link
+          className="underline text-blue-400 hover:text-red-400"
+          href={`mailto:${toEmail}`}
+        >
           {toEmail}
         </Link>
       </p>
@@ -370,13 +375,13 @@ function BookingForm({ endpoint, toEmail, push }) {
   } = useForm({ resolver: zodResolver(bookingSchema) });
 
   // -------- Calendar helpers --------
-  const pad = (n) => String(n).padStart(2, "0");
-  const fmtUTC = (d) =>
+  const pad = n => String(n).padStart(2, '0');
+  const fmtUTC = d =>
     `${d.getUTCFullYear()}${pad(d.getUTCMonth() + 1)}${pad(d.getUTCDate())}` +
     `T${pad(d.getUTCHours())}${pad(d.getUTCMinutes())}${pad(d.getUTCSeconds())}Z`;
 
-  const escapeICS = (s = "") =>
-    String(s).replace(/\n/g, "\\n").replace(/,/g, "\\,").replace(/;/g, "\\;");
+  const escapeICS = (s = '') =>
+    String(s).replace(/\n/g, '\\n').replace(/,/g, '\\,').replace(/;/g, '\\;');
 
   function makeICS({
     startLocal,
@@ -391,12 +396,12 @@ function BookingForm({ endpoint, toEmail, push }) {
     const uid = `${Date.now()}-${Math.random().toString(36).slice(2)}@tamimalhridoy.com`;
 
     const lines = [
-      "BEGIN:VCALENDAR",
-      "VERSION:2.0",
-      "PRODID:-//tamimalhridoy//contact//EN",
-      "CALSCALE:GREGORIAN",
-      "METHOD:PUBLISH",
-      "BEGIN:VEVENT",
+      'BEGIN:VCALENDAR',
+      'VERSION:2.0',
+      'PRODID:-//tamimalhridoy//contact//EN',
+      'CALSCALE:GREGORIAN',
+      'METHOD:PUBLISH',
+      'BEGIN:VEVENT',
       `UID:${uid}`,
       `DTSTAMP:${dtstamp}`,
       `DTSTART:${fmtUTC(start)}`,
@@ -404,16 +409,16 @@ function BookingForm({ endpoint, toEmail, push }) {
       `SUMMARY:${escapeICS(title)}`,
       `DESCRIPTION:${escapeICS(description)}`,
       `LOCATION:${escapeICS(location)}`,
-      "END:VEVENT",
-      "END:VCALENDAR",
+      'END:VEVENT',
+      'END:VCALENDAR',
     ];
-    return lines.join("\r\n");
+    return lines.join('\r\n');
   }
 
   function downloadICS(filename, text) {
-    const blob = new Blob([text], { type: "text/calendar" });
+    const blob = new Blob([text], { type: 'text/calendar' });
     const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
+    const a = document.createElement('a');
     a.href = url;
     a.download = filename;
     document.body.appendChild(a);
@@ -433,7 +438,7 @@ function BookingForm({ endpoint, toEmail, push }) {
     const end = new Date(start.getTime() + duration * 60000);
     const dates = `${fmtUTC(start)}/${fmtUTC(end)}`;
     const params = new URLSearchParams({
-      action: "TEMPLATE",
+      action: 'TEMPLATE',
       text: title,
       dates,
       details,
@@ -443,38 +448,38 @@ function BookingForm({ endpoint, toEmail, push }) {
   }
 
   // -------- Submit handler --------
-  const onSubmit = async (d) => {
+  const onSubmit = async d => {
     try {
       if (endpoint) {
-        await submitToApi(endpoint, { type: "booking", ...d });
-        push({ title: "Thanks! I will get back soon.", variant: "success" });
+        await submitToApi(endpoint, { type: 'booking', ...d });
+        push({ title: 'Thanks! I will get back soon.', variant: 'success' });
         reset();
       } else {
         const subject = encodeURIComponent(`Call request — ${d.datetime}`);
         const body = encodeURIComponent(
-          `Please confirm a call.\n\nTime: ${d.datetime}\nNotes: ${d.notes || "-"}\n\n— ${d.name} • ${d.email}`
+          `Please confirm a call.\n\nTime: ${d.datetime}\nNotes: ${d.notes || '-'}\n\n— ${d.name} • ${d.email}`
         );
         window.location.href = `mailto:${toEmail}?subject=${subject}&body=${body}`;
       }
     } catch (e) {
       push({
         title: "Couldn't send your request",
-        desc: e.message || "Please try again.",
-        variant: "error",
+        desc: e.message || 'Please try again.',
+        variant: 'error',
       });
     }
   };
 
   // -------- Calendar actions (computed) --------
-  const name = watch("name");
-  const email = watch("email");
-  const when = watch("datetime");
-  const notes = watch("notes") || "-";
+  const name = watch('name');
+  const email = watch('email');
+  const when = watch('datetime');
+  const notes = watch('notes') || '-';
 
   const readyForCal = Boolean(name && email && when);
-  const calTitle = "Call with Tamim Al Hridoy";
+  const calTitle = 'Call with Shuvo';
   const calDetails = `Name: ${name}\nEmail: ${email}\nNotes: ${notes}`;
-  const calLocation = "Online (meet link will be shared)";
+  const calLocation = 'Online (meet link will be shared)';
   const gcalUrl = readyForCal
     ? buildGoogleLink({
         startLocal: when,
@@ -483,7 +488,7 @@ function BookingForm({ endpoint, toEmail, push }) {
         location: calLocation,
         duration: 30,
       })
-    : "#";
+    : '#';
 
   return (
     <form className="grid gap-3" onSubmit={handleSubmit(onSubmit)}>
@@ -493,15 +498,16 @@ function BookingForm({ endpoint, toEmail, push }) {
         className="hidden"
         tabIndex={-1}
         autoComplete="off"
-        {...register("hp")}
+        {...register('hp')}
       />
 
       <div className="grid gap-3 md:grid-cols-2">
         <label className="grid gap-1">
           <span>Name</span>
           <input
+            placeholder="Enter your name"
             className="rounded-xl border border-black/10 dark:border-white/10 bg-white dark:bg-slate-900 text-slate-900 dark:text-white px-3 py-2 outline-none focus:ring-2 focus:ring-[var(--brand2-hex)]"
-            {...register("name")}
+            {...register('name')}
           />
           {errors.name && (
             <span className="text-red-500 text-sm">{errors.name.message}</span>
@@ -511,8 +517,9 @@ function BookingForm({ endpoint, toEmail, push }) {
         <label className="grid gap-1">
           <span>Email</span>
           <input
+            placeholder="Enter your Email"
             className="rounded-xl border border-black/10 dark:border-white/10 bg-white dark:bg-slate-900 text-slate-900 dark:text-white px-3 py-2 outline-none focus:ring-2 focus:ring-[var(--brand2-hex)]"
-            {...register("email")}
+            {...register('email')}
             type="email"
           />
           {errors.email && (
@@ -525,7 +532,7 @@ function BookingForm({ endpoint, toEmail, push }) {
         <span>Date &amp; Time</span>
         <input
           className="rounded-xl border border-black/10 dark:border-white/10 bg-white dark:bg-slate-900 text-slate-900 dark:text-white px-3 py-2 outline-none focus:ring-2 focus:ring-[var(--brand2-hex)]"
-          {...register("datetime")}
+          {...register('datetime')}
           type="datetime-local"
         />
         {errors.datetime && (
@@ -540,7 +547,7 @@ function BookingForm({ endpoint, toEmail, push }) {
         <textarea
           rows={5}
           className="rounded-xl border border-black/10 dark:border-white/10 bg-white dark:bg-slate-900 text-slate-900 dark:text-white px-3 py-2 outline-none focus:ring-2 focus:ring-[var(--brand2-hex)]"
-          {...register("notes")}
+          {...register('notes')}
           placeholder="Context or agenda…"
         />
       </label>
@@ -551,17 +558,17 @@ function BookingForm({ endpoint, toEmail, push }) {
           href={gcalUrl}
           target="_blank"
           rel="noopener noreferrer"
-          onClick={(e) => {
+          onClick={e => {
             if (!readyForCal) {
               e.preventDefault();
               push({
-                title: "Fill name, email & time first",
-                variant: "error",
+                title: 'Fill name, email & time first',
+                variant: 'error',
               });
             }
           }}
           className={`rounded-xl border border-black/10 px-3 py-2 text-sm transition hover:bg-black/5 dark:border-white/10 dark:hover:bg-white/5 ${
-            !readyForCal ? "pointer-events-none opacity-60" : ""
+            !readyForCal ? 'pointer-events-none opacity-60' : ''
           }`}
           aria-disabled={!readyForCal}
         >
@@ -579,18 +586,19 @@ function BookingForm({ endpoint, toEmail, push }) {
               description: calDetails,
               location: calLocation,
             });
-            downloadICS("call-with-tamim.ics", ics);
-            push({ title: "ICS downloaded" });
+            downloadICS('call-with-Shuvo.ics', ics);
+            push({ title: 'ICS downloaded' });
           }}
-          className="rounded-xl border border-black/10 px-3 py-2 text-sm transition hover:bg-black/5 disabled:opacity-60 dark:border-white/10 dark:hover:bg-white/5"
+          className="rounded-xl border border-black/10 px-3 py-2 text-sm transition hover:bg-black/5 disabled:opacity-60 dark:border-white/5 dark:hover:bg-gray-400"
         >
           Download .ics
         </button>
       </div>
 
       <button className="btn w-fit" type="submit" disabled={isSubmitting}>
-        <Calendar size={18} /> {isSubmitting ? "Sending..." : "Request a call"}
+        <Calendar size={18} /> {isSubmitting ? 'Sending...' : 'Request a call'}
       </button>
     </form>
   );
+  
 }

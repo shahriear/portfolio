@@ -4,7 +4,7 @@
 import Link from "next/link";
 import { Mail, Github, Linkedin, ArrowUp, MessageCircle } from "lucide-react";
 
-const BRAND = "Shahriear Shuvo";
+const BRAND = "shahriear shuvo";
 
 export default function Footer() {
   const year = new Date().getFullYear();
