@@ -46,7 +46,7 @@ export default function SignInPage() {
       <div className="w-full max-w-lg">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-sm opacity-70 hover:opacity-100 mb-3"
+          className="inline-flex items-center gap-2 text-sm opacity-70 hover:opacity-100 mb-8 border border-gray-400 rounded-xl hover:bg-gray-500 hover:text-white dark:hover:bg-yellow-600 p-2"
         >
           <ArrowLeft size={16} /> Back Home
         </Link>
@@ -56,7 +56,7 @@ export default function SignInPage() {
             className="h-1.5"
             style={{
               background:
-                "linear-gradient(90deg, var(--brand-hex), var(--brand2-hex))",
+                'linear-gradient(90deg, var(--brand-hex), var(--brand2-hex))',
             }}
           />
           <div className="bg-white/80 dark:bg-neutral-950/70 backdrop-blur p-8">
@@ -76,7 +76,7 @@ export default function SignInPage() {
                     <input
                       type="email"
                       value={email}
-                      onChange={(e) => setEmail(e.target.value)}
+                      onChange={e => setEmail(e.target.value)}
                       placeholder="you@example.com"
                       className="flex-1 bg-transparent py-3 outline-none"
                       required
@@ -92,18 +92,18 @@ export default function SignInPage() {
                   className="w-full rounded-2xl px-4 py-3 font-semibold shadow-md text-white"
                   style={{
                     background:
-                      "linear-gradient(90deg, var(--brand-hex), var(--brand2-hex))",
+                      'linear-gradient(90deg, var(--brand-hex), var(--brand2-hex))',
                   }}
                 >
-                  {submitting ? "Please wait…" : "Get sign-in link"}
+                  {submitting ? 'Please wait…' : 'Get sign-in link'}
                 </button>
 
                 <p className="text-xs opacity-70 text-center">
-                  By continuing, you agree to our{" "}
+                  By continuing, you agree to our{' '}
                   <Link href="/legal/terms" className="underline">
                     Terms
-                  </Link>{" "}
-                  &{" "}
+                  </Link>{' '}
+                  &{' '}
                   <Link href="/legal/privacy" className="underline">
                     Privacy Policy
                   </Link>

@@ -13,7 +13,7 @@ const links = [
   { href: "/about", label: "About" },
   { href: "/resume", label: "Resume" },
   { href: "/portfolio", label: "Portfolio" },
-  { href: "/garments", label: "Garments" },
+  // { href: "/garments", label: "Garments" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -100,7 +100,7 @@ export default function Navbar() {
           </Link>
         </div>
         {/* MIDDLE NAV (desktop only, occupies true center column) */}
-        <nav className="hidden md:flex items-center justify-center gap-2 col-start-2">
+        <nav className="hidden md:flex items-center justify-center gap-2 col-start-2 ">
           {links.map(l => {
             const active = pathname === l.href;
             return (
@@ -159,7 +159,7 @@ export default function Navbar() {
       {/* ===== Mobile panel ===== */}
       <div
         id="mobile-menu"
-        className={`md:hidden fixed inset-x-0 top-16 z-50 bg-white/95 dark:bg-neutral-950/90 border-t border-black/10 dark:border-white/10 shadow-lg transition-transform duration-200 ${
+        className={`md:hidden fixed inset-x-0 top-16 z-50 bg-white/95 dark:bg-neutral-900/95 border-t border-black/10 dark:border-white/10 shadow-lg transition-transform duration-200 ${
           open
             ? 'translate-y-0 opacity-100'
             : '-translate-y-2 opacity-0 pointer-events-none'
@@ -170,7 +170,7 @@ export default function Navbar() {
           {/* Mobile search */}
           <form
             onSubmit={submitSearch}
-            className="flex items-center gap-2 bg-[oklch(var(--surface))] ring-1 ring-black/10 dark:ring-white/10 rounded-xl p-2 shadow-md"
+            className="flex items-center gap-2 bg-[oklch(var(--surface))] ring-1 ring-black/10 dark:ring-white/20 rounded-xl p-2 shadow-md"
           >
             <Search size={18} className="opacity-70" />
             <input

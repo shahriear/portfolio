@@ -73,26 +73,26 @@ const experience = [
 
 const education = [
   {
-    school: "Primeasia University",
-    period: "2018 — 2022",
+    school: 'Uttara University',
+    period: '2025 — 2028',
+    details: 'B.Sc. in CSE Engineering — strong analytical & research skills',
+  },
+  {
+    school: 'Creative IT Institute',
+    period: '2023 — 2025',
     details:
-      "B.Sc. in Textile Engineering — strong analytical & research skills",
+      'Full-stack bootcamp: HTML/CSS/JS, React, Next.js, Node.js, Express, MongoDB',
   },
   {
-    school: "Creative IT Institute",
-    period: "2023 — 2024",
+    school: 'Security Printing Corporation High School',
+    period: '2010 — 2020',
     details:
-      "Full-stack bootcamp: HTML/CSS/JS, React, Next.js, Node.js, Express, MongoDB",
+      'Communication / Leadership / Teamwork. Computer / Programming skills',
   },
   {
-    school: "Creative IT Institute",
-    period: "2018",
-    details: "SEO, SMM, Google Ads, Content Marketing (Professional)",
-  },
-  {
-    school: "Self-Learning & MOOCs",
-    period: "Ongoing",
-    details: "System design, performance, a11y, testing, product thinking",
+    school: 'Self-Learning & MOOCs',
+    period: 'Ongoing',
+    details: 'System design, performance, a11y, testing, product thinking',
   },
 ];
 
