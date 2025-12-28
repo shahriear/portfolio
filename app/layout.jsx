@@ -19,7 +19,7 @@ export const metadata = {
   ),
   title: {
     default: "Shuvo — Full-Stack Developer",
-    template: "%s | Tamim Al Hridoy",
+    template: "%s | Shahriear Shuvo",
   },
   description:
     "Full-stack developer portfolio. Next.js, Node.js, branding and more.",
