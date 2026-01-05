@@ -9,7 +9,7 @@ import { useRouter, usePathname } from "next/navigation";
 import SearchPopover from "@/components/SearchPopover";
 
 const links = [
-  { href: "/", label: "Homee" },
+  { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/resume", label: "Resume" },
   { href: "/portfolio", label: "Portfolio" },
