@@ -88,7 +88,7 @@ export default function HeroSection({
         transition={{ duration: 0.6, ease: 'easeOut' }}
         className="relative"
       >
-        <div className="card h-0 m-auto overflow-hidden p-0 md:h-[22rem] md:ml-24 w-fit">
+        <div className="card h-fit m-auto overflow-hidden p-0 md:h-[22rem] md:ml-24 w-5/6 md:w-fit">
           <Image
             src={imageSrc}
             alt={imageAlt}
