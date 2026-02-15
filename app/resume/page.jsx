@@ -1,4 +1,6 @@
 "use client";
+import React from 'react';
+
 
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -81,39 +83,61 @@ const education = [
     school: 'Creative IT Institute',
     period: '2023 — 2025',
     details:
-      'Full-stack bootcamp: HTML/CSS/JS, React, Next.js, Node.js, Express, MongoDB',
+      'Completed intensive full-stack training with real-world projects using React, Next.js, Node.js, Express, and MongoDB',
+  },
+  {
+    school: 'Diploma in Engineering (CSE)',
+    period: '2020 — 2024',
+    details:
+      'Strong foundation in computer science fundamentals and practical development skills',
   },
   {
     school: 'Security Printing Corporation High School',
     period: '2010 — 2020',
     details:
-      'Communication / Leadership / Teamwork. Computer / Programming skills',
-  },
-  {
-    school: 'Self-Learning & MOOCs',
-    period: 'Ongoing',
-    details: 'System design, performance, a11y, testing, product thinking',
+      'Academic foundation with active participation in teamwork, presentations, and technology learning',
   },
 ];
 
 const certifications = [
   {
-    name: "Meta Front-End Developer (Professional Cert.)",
-    org: "Meta / Coursera",
-    year: "2024",
+    name: 'Meta Front-End Developer (Professional Cert.)',
+    org: 'Meta / Coursera',
+    year: '2024',
+    image: '/certificate(backend).jpg',
   },
   {
-    name: "Google Analytics 4 (GA4) Certification",
-    org: "Google",
-    year: "2024",
+    name: 'Google Analytics 4 (GA4) Certification',
+    org: 'Google',
+    year: '2024',
+    image: '/certificate(fontend).jpg',
   },
   {
-    name: "AWS Cloud Practitioner (CLF-C02)",
-    org: "Amazon Web Services",
-    year: "2023",
+    name: 'AWS Cloud Practitioner (CLF-C02)',
+    org: 'Amazon Web Services',
+    year: '2023',
+    image: '/diploma.PNG',
   },
-  { name: "Javascript & Node.js Mastery", org: "Udemy", year: "2023" },
+  {
+    name: 'Javascript & Node.js Mastery',
+    org: 'Udemy',
+    year: '2023',
+    image: '/ssc.jpeg',
+  },
+  {
+    name: 'Javascript & Node.js Mastery',
+    org: 'Udemy',
+    year: '2023',
+    image: '/psc.PNG',
+  },
+  {
+    name: 'Javascript & Node.js Mastery',
+    org: 'Udemy',
+    year: '2023',
+    image: '/Scout.PNG',
+  },
 ];
+
 
 const quickFacts = [
   { k: "Projects shipped", v: "80+" },
@@ -150,6 +174,7 @@ const GRADIENT = `linear-gradient(90deg, var(--brand-hex, #1f155a), var(--brand2
 /* ========= COMPONENT ========= */
 
 export default function ResumeClient() {
+  const [selectedCert, setSelectedCert] = React.useState(null);
   return (
     <div className="relative container mt-24">
       {/* decorative bg */}
@@ -213,7 +238,7 @@ export default function ResumeClient() {
         viewport={{ once: true, amount: 0.3 }}
         className="mt-6 grid max-w-2xl grid-cols-3 gap-3"
       >
-        {quickFacts.map((f) => (
+        {quickFacts.map(f => (
           <motion.li
             key={f.k}
             variants={fade}
@@ -345,8 +370,11 @@ export default function ResumeClient() {
         className="mt-12 mb-8"
       >
         <div className="mb-4 flex items-center gap-2">
-          <div className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-neutral-100 dark:bg-neutral-800">
-            <Award className="h-5 w-5 opacity-90" aria-hidden />
+          <div className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-red-300 dark:bg-neutral-600">
+            <Award
+              className="h-5 w-5 opacity-90 stroke-white dark:stroke-yellow-500"
+              aria-hidden
+            />
           </div>
           <h2 className="text-xl font-bold">Certifications & Courses</h2>
         </div>
@@ -356,7 +384,8 @@ export default function ResumeClient() {
             <motion.div
               key={idx}
               variants={fade}
-              className="flex items-center justify-between rounded-2xl border border-black/10 bg-[oklch(var(--surface))] px-4 py-3 shadow-sm transition hover:shadow-md dark:border-white/10"
+              onClick={() => setSelectedCert(c)}
+              className="flex cursor-pointer items-center justify-between rounded-2xl border border-black/10 bg-[oklch(var(--surface))] px-4 py-3 shadow-sm transition hover:shadow-md hover:scale-[1.02] dark:border-white/10"
             >
               <div>
                 <div className="font-medium">{c.name}</div>
@@ -367,6 +396,24 @@ export default function ResumeClient() {
           ))}
         </div>
       </motion.section>
+      {/* ===== CERTIFICATE MODAL HERE ===== */}
+      {selectedCert && (
+        <div
+          onClick={() => setSelectedCert(null)}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
+        >
+          <div
+            onClick={e => e.stopPropagation()}
+            className="max-w-4xl w-full rounded-xl bg-yellow-100 p-3"
+          >
+            <img
+              src={selectedCert.image}
+              alt={selectedCert.name}
+              className="rounded-lg w-full"
+            />
+          </div>
+        </div>
+      )}
 
       {/* Mobile CTA */}
       <Link
@@ -381,4 +428,5 @@ export default function ResumeClient() {
       </Link>
     </div>
   );
+  
 }

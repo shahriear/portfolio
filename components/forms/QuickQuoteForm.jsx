@@ -87,12 +87,12 @@ export default function QuickQuoteForm() {
 
       {ok && (
         <div className="rounded-xl border bg-green-50 px-3 py-2 text-sm">
-          ✅ Thanks! We’ll send the quote shortly.
+           Thanks! We’ll send the quote shortly.
         </div>
       )}
       {err && (
         <div className="rounded-xl border bg-red-50 px-3 py-2 text-sm text-red-700">
-          ❌ {err}
+           {err}
         </div>
       )}
     </form>

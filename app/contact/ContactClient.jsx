@@ -221,7 +221,7 @@ export default function ContactClient() {
               <Facebook size={18} />
             </Link>
             <Link
-              href="https://www.instagram.com/shuv0o._?igsh=MzZoZDNqazRmazl0"
+              href="https://www.instagram.com/_shuv0o_?igsh=MzZoZDNqazRmazl0"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
