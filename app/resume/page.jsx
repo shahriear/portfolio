@@ -101,39 +101,39 @@ const education = [
 
 const certifications = [
   {
-    name: 'Meta Front-End Developer (Professional Cert.)',
-    org: 'Meta / Coursera',
-    year: '2024',
-    image: '/certificate(backend).jpg',
-  },
-  {
-    name: 'Google Analytics 4 (GA4) Certification',
-    org: 'Google',
+    name: 'Frontend Development With React.js',
+    org: 'Creative IT Institute',
     year: '2024',
     image: '/certificate(fontend).jpg',
   },
   {
-    name: 'AWS Cloud Practitioner (CLF-C02)',
-    org: 'Amazon Web Services',
-    year: '2023',
+    name: 'Backend Development With Node.js',
+    org: 'Creative IT Institute',
+    year: '2025',
+    image: '/certificate(backend).jpg',
+  },
+  {
+    name: 'Diploma in Computer Science & Engineering',
+    org: 'MIST',
+    year: '2024',
     image: '/diploma.PNG',
   },
   {
-    name: 'Javascript & Node.js Mastery',
-    org: 'Udemy',
-    year: '2023',
+    name: 'SSC',
+    org: 'SPC High School',
+    year: '2020',
     image: '/ssc.jpeg',
   },
   {
-    name: 'Javascript & Node.js Mastery',
-    org: 'Udemy',
-    year: '2023',
+    name: 'PSC',
+    org: 'SPC High School',
+    year: '2014',
     image: '/psc.PNG',
   },
   {
-    name: 'Javascript & Node.js Mastery',
-    org: 'Udemy',
-    year: '2023',
+    name: 'Scout',
+    org: 'Circuit House- Gazipur',
+    year: '2017',
     image: '/Scout.PNG',
   },
 ];
@@ -417,14 +417,20 @@ export default function ResumeClient() {
 
       {/* Mobile CTA */}
       <Link
-        href="/resume.pdf"
+        href="/pdf/resume-MERN (shuvo).pdf"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-4 right-4 z-40 flex items-center gap-2 rounded-xl border border-black/10 bg-[oklch(var(--surface))] px-4 py-2 text-sm shadow-lg backdrop-blur supports-[backdrop-filter]:bg-[oklch(var(--surface))/90] dark:border-white/10 md:hidden"
+        className="fixed bottom-7 right-4 z-40 flex items-center gap-2 rounded-xl border border-black/10 bg-[oklch(var(--surface))] px-4 py-2 text-sm shadow-lg backdrop-blur supports-[backdrop-filter]:bg-[oklch(var(--surface))/90] dark:border-white/20 md:hidden"
       >
-        <Download className="h-4 w-4" aria-hidden />
+        <Download
+          className="h-4 w-4 text-blue-800 dark:text-amber-400"
+          aria-hidden
+        />
         <span>Download PDF</span>
-        <ArrowRight className="h-4 w-4" aria-hidden />
+        <ArrowRight
+          className="h-4 w-4 text-blue-800 dark:text-amber-400"
+          aria-hidden
+        />
       </Link>
     </div>
   );
