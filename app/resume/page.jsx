@@ -385,7 +385,14 @@ export default function ResumeClient() {
               key={idx}
               variants={fade}
               onClick={() => setSelectedCert(c)}
-              className="flex cursor-pointer items-center justify-between rounded-2xl border border-black/10 bg-[oklch(var(--surface))] px-4 py-3 shadow-sm transition hover:shadow-md hover:scale-[1.02] dark:border-white/10"
+              whileHover={{
+                scale: 1.05,
+                y: -4,
+                boxShadow: '0 10px 25px rgba(0,0,0,0.15)',
+              }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ type: 'spring', stiffness: 260, damping: 18 }}
+              className="flex cursor-pointer items-center justify-between rounded-2xl border border-black/10 bg-[oklch(var(--surface))] px-4 py-3 shadow-sm transition hover:shadow-md hover:scale-[1.02] dark:border-white/10 dark:hover:bg-gray-400/20"
             >
               <div>
                 <div className="font-medium">{c.name}</div>
